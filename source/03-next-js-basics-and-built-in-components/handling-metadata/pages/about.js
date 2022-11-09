@@ -14,6 +14,11 @@ function AboutPage() {
         </Link>
       </div>
       <div>
+        <Link href="/redirect" passHref>
+          <a>Back to the Future</a>
+        </Link>
+      </div>
+      <div>
         <Widget pageName="about" />
       </div>
     </>

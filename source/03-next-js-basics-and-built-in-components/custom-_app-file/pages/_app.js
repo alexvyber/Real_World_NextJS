@@ -11,13 +11,27 @@ const themes = {
     background: 'white',
     color: 'black',
   },
+  red: {
+    background: 'red',
+    color: 'blue',
+  },
 };
+
+function* themeSwitcher() {
+  while (true) {
+    yield 'dark';
+    yield 'light';
+    yield 'red';
+  }
+}
+
+const nextTheme = themeSwitcher();
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(nextTheme.next().value);
   };
 
   return (
@@ -27,7 +41,8 @@ function MyApp({ Component, pageProps }) {
           width: '100%',
           minHeight: '100vh',
           ...themes[theme],
-        }}>
+        }}
+      >
         <Navbar />
         <Component {...pageProps} />
       </div>

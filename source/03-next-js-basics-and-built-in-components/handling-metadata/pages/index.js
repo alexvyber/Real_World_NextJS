@@ -16,6 +16,11 @@ function IndexPage() {
       <div>
         <Widget pageName="index" />
       </div>
+      <div>
+        <Link href="/redirect" passHref>
+          <a>Back to the Future</a>
+        </Link>
+      </div>
     </>
   );
 }

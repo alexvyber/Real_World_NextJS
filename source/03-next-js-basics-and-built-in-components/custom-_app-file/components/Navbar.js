@@ -4,7 +4,7 @@ import themeContext from './themeContext';
 
 function Navbar() {
   const { toggleTheme, theme } = useContext(themeContext);
-  const newThemeName = theme === 'dark' ? 'light' : 'dark';
+  const newThemeName = theme 
   return (
     <div
       style={{
